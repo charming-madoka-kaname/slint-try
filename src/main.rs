@@ -1,15 +1,21 @@
-slint::include_modules!();
+fn main() {
+    MainWindow::new().unwrap().run().unwrap();
+}
 
-fn main() -> Result<(), slint::PlatformError> {
-    let ui = AppWindow::new()?;
-
-    ui.on_request_increase_value({
-        let ui_handle = ui.as_weak();
-        move || {
-            let ui = ui_handle.unwrap();
-            ui.set_counter(ui.get_counter() + 1);
+slint::slint! {
+    component MemoryTile inherits Rectangle {
+        width: 64px;
+        height: 64px;
+        background: #3960D5;
+    
+        Image {
+            source: @image-url("icons/bus.png");
+            width: parent.width;
+            height: parent.height;
         }
-    });
-
-    ui.run()
+    }
+    
+    export component MainWindow inherits Window {
+        MemoryTile {}
+    }
 }
