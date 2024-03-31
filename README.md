@@ -1,3 +1,11 @@
+# Testing Slint
+
+This is a UI framework in Rust (like Kivy/React).
+
+## My experience
+
+It's cool. Probably what I need. But compile times are 13-14 minutes... such thing is very common in Rust UI libraries/frameworks. Today, Rust is immature for UI design (and it continues the same).
+
 # Slint Rust Template
 
 A template for a Rust application that's using [Slint](https://slint.rs) for the user interface.
